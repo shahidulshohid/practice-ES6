@@ -9,10 +9,11 @@ const polapain = [
 
 //sorkari => 20000 or besorkari => 40;
 const jamais = polapain.filter((pola) => (pola.job === 'sorkari' && pola.salary >=20000) ||  (pola.job === 'besorkari' && pola.salary >=40000));
-// console.log(jamais)
+console.log(jamais)
 
 const lottery = Math.floor(Math.random() * jamais.length)
-console.log(jamais[lottery].Name)
+console.log(lottery)
+console.log(jamais[lottery].Name, 'tumi jitso.....!')
 
 
 // this is one of my proces it 
