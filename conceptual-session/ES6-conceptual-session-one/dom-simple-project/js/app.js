@@ -50,7 +50,9 @@ const people = [
 
 
 const peopleList = document.getElementById('people-list');
-console.log(peopleList)
+const personInfo = document.getElementById('person-info');
+const noSelection = document.getElementById('no-selection')
+
 const renderPeopleList = (people) => {
   people.map((person) => {
     const li = document.createElement('li');
@@ -62,13 +64,24 @@ const renderPeopleList = (people) => {
     } )
   })
 }
+renderPeopleList(people)
+
+const displayPersonInfo = (person) => {
+  personInfo.classList.remove('hidden');
+  noSelection.classList.add('hidden')
+  personInfo.innerHTML = `
+  <h1 class='text-2xl font-bold mb-2'>${person.name} </h1>
+  <p>${person?.contact?.phone || 'N/A'}</p>
+  <p>city: ${person?.address?.city || 'N/A'}
+  <p>hobbies: ${person.hobbies.map((item) => item).join(' ')} </p>
+  `;
+}
 
 const handlePersonClick = (id) => {
   const person = people.find((p) => p.id == id)
-  console.log(person)
+  displayPersonInfo(person)
 }
 
-renderPeopleList(people)
 
 
 
