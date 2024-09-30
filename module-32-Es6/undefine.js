@@ -52,5 +52,6 @@ const nine = null // you can do it instead of undefined;
 const data = {results: [], update: null}
 // console.log(data)
 
-console.log(typeof undefined)
-console.log(typeof null)
+// console.log(typeof undefined)
+// console.log(typeof null)
+
